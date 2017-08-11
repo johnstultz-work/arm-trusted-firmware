@@ -634,6 +634,7 @@ static void set_ddrc_800mhz(void)
 
 	mmio_write_32((0xf7128000 + 0x040), 0x2001);
 	mmio_write_32((0xf712c000 + 0x004), 0x140f);
+	NOTICE("NOTICE: FUN RACE AHEAD\n");
 	do {
 		data = mmio_read_32((0xf712c000 + 0x004));
 	} while (data & 1);
